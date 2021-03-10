@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <title>{{ title }} - Order</title>
 </head>
 <body>
+    <h1>Order</h1>
     <div>
         <p>
-            Customer Name: {{order.customer_name}}
+            <b class="order-det">Customer Name:</b> {{order.customer_name}}
         </p>
         <p>
-            Date: {{order.order_date}}
+            <b class="order-det">Date:</b> {{order.order_date}}
         </p>
     </div>
     <div>
             <p>
-                Quantity: {{order.quantity}}
+                <b class="order-det">Quantity:</b> {{order.quantity}}
             <p>
-                Book: {{order.book_title}}, {{order.author}}
+                <b class="order-det">Book:</b> {{order.book_title}}, {{order.author}}
             </p>
-                Description: {{order.description}}
+                <b class="order-det">Description:</b> {{order.description}}
             </p>
         </a>
     </div>

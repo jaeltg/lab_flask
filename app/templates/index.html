@@ -4,30 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <title>{{ title }} - List of orders</title>
 </head>
 <body>
-    <h1>List of orders:</h1>
+    <h1>Orders</h1>
     {% for order in orders %}
-        <div>
+    <section>  
+        <div class="customer">
             <p>
-                Customer Name: {{order.customer_name}}
+                <b>Customer Name:</b> {{order.customer_name}}
             </p>
             <p>
-                Date: {{order.order_date}}
+                <b>Date:</b>  {{order.order_date}}
             </p>
         </div>
-        <div>
+        <div class="order">
+            <h2>Order</h2>
                 <p>
-                    Quantity: {{order.quantity}}
+                    <b>Quantity:</b>  {{order.quantity}}
                 <p>
-                    Book: {{order.book_title}}, {{order.author}}
+                    <b>Book:</b>  {{order.book_title}}, {{order.author}}
                 </p>
-                    Description: {{order.description}}
+                    <b>Description:</b>  {{order.description}}
                 </p>
                 <a href="/orders/{{loop.index0}}">Show more</a>
         </div>
-        <hr>
+        </section>
     {% endfor %}
+    </section>
 </body>
 </html>
